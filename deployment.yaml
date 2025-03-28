@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotelapp
+  labels:
+    app: hotelapp
+spec:
+  replicas: 2  # Number of pod replicas
+  selector:
+    matchLabels:
+      app: hotelapp
+  template:
+    metadata:
+      labels:
+        app: hotelapp
+    spec:
+      containers:
+        - name: hotelapp
+          image: hotelapp:latest 
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000  

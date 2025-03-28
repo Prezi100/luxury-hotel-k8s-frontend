@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotelapp # Name of the Service
+  namespace: default  
+  labels:
+    app: hotelapp    
+spec:
+  selector:
+    app: hotelapp    
+  ports:
+    - protocol: TCP    
+      port: 3000        
+      targetPort: 3000 
+  type: LoadBalancer 
